@@ -12,65 +12,14 @@ that can reason about information given about the world and definitively determi
 The HyNOLU project aims to transform information about the world input as text into precise logic statements that can then be processed by machines to create inferences or determine contradictions if ones exist. HyNOLU architecture uses an existing robust knowledge representation, an input preprocessor that includes metaphor translation and sentence simplification, an auto formalization language-logic translator, and an automated theorem prover. The overall HyNOLU architecture and details of individual modules will be discussed in futher depth below.
 
 \section{Suggested Upper Merged Ontology}
-Suggested Upper Merged Onotology (SUMO) is a type of ontology, which is a set of concepts and categories within a domain that shows their properties and relationships bewteen them. SUMO has had consistent contributions added to it for over 25 years and has extended into several hundred domains beyond merely an upper ontology that its name implies. Human interpretation of natural language requires implicit understandings of context, and background information about word meanings to form an accurate understanding of what is being conveyed. SUMO enables the mapping of words and sentences to domain-specific concepts that embed meaning to the input language. SUMO is similar to other ontologies in its use of hierarchy for organizing concepts, but distinct in its incorportation of formal logic for concept definitions. Every term in SUMO is coded in a formal logic called Knowledge Exchange Format (SUO-KIF), which allows machines to perform logical reasoning on concepts written in this language. The hierarchy begins with high-level concepts such as 'Entity', 'Physical', 'Abstract', 'Object', and 'Process'. These upper ontology concepts form the base for lower level concepts. For example an Apple is a subclass of Fruit which is a subclass of Object
-
-
-
-
-
-
-The Suggested Upper Merged Ontology (SUMO) is a significant effort aimed at addressing challenges in knowledge representation, stemming from the need to formalize concepts for diverse domains in a unified, logical framework. Initiated as part of the IEEE-sanctioned Standard Upper Ontology (SUO) Working Group, SUMO provides a foundation for harmonizing disparate systems and fostering interoperability.
-
-### Background of SUMO
-SUMO emerged from the recognition that advancements in AI, natural language understanding, and software integration require a precise and common conceptual framework. Traditionally, AI systems struggle with issues such as:
-- **Ambiguity in natural language**: Words and structures in human language are often vague and context-dependent, leading to misinterpretation by machines.
-- **Inconsistent conceptual definitions**: Ad hoc and informal definitions of concepts in different systems hinder integration.
-- **Limited reasoning capabilities**: Current AI systems lack robust frameworks to logically validate or explain their decisions.
-
-SUMO was created to address these gaps by providing:
-1. **A Standardized Framework**: SUMO defines general-purpose concepts that serve as a foundation for building domain-specific ontologies. This standardization reduces redundancy and ensures consistency.
-2. **Logical Rigor**: Built on the Knowledge Interchange Format (KIF), SUMO incorporates formal logic, enabling machines to perform logical reasoning over defined concepts.
-3. **Open-Source Collaboration**: Unlike proprietary knowledge bases, SUMO is developed through an open process, encouraging community input and peer review to improve its scope and usability.
-
-### Relevance to Natural Language to Logic Translation
-Natural language to logic translation engines aim to convert ambiguous and expressive human language into precise, machine-interpretable logical statements. SUMO significantly enhances such systems in the following ways:
-
-1. **Rich Conceptual Hierarchy**:
-   - SUMO provides a well-structured hierarchy of high-level concepts such as `Entity`, `Physical`, `Abstract`, `Object`, and `Process`. This hierarchy ensures that natural language inputs can be mapped to specific, well-defined categories, reducing ambiguity.
-   - For example, SUMO differentiates between `Object` (a tangible entity) and `Process` (a dynamic activity), enabling nuanced interpretations of sentences like “The car is moving.”
-
-2. **Formal Definitions**:
-   - Every term in SUMO is accompanied by logical axioms that define its properties and relationships. These axioms help the engine interpret sentences logically. For instance, relations like `part-of` and `instance-of` facilitate understanding hierarchical or compositional relationships in text.
-
-3. **Semantic Consistency**:
-   - SUMO aids in resolving coreference and synonymy issues by providing a unified vocabulary. This ensures that different terms referring to the same concept (e.g., "vehicle" and "car") are interpreted consistently.
-
-4. **Cross-Domain Applicability**:
-   - SUMO’s modularity and extensibility allow integration with domain-specific ontologies, making it adaptable for translating texts from specialized fields like law, medicine, or engineering.
-
-5. **Logical Reasoning Capabilities**:
-   - By embedding formal logic, SUMO enables engines to perform deductive reasoning. For example, a system can infer new facts or validate statements against predefined axioms, improving trustworthiness and interpretability.
-
-6. **Simplification of Complex Sentences**:
-   - The structured nature of SUMO’s concepts supports breaking down complex natural language inputs into simpler, logically equivalent forms. This preprocessing step is crucial for engines that must handle intricate logical constructs.
-
-### Contribution to Addressing AI Shortcomings
-AI systems often face criticism for their lack of transparency and logical accountability. SUMO directly addresses these concerns by:
-- **Providing a foundation for explainable AI**: Logical proofs derived from SUMO’s axioms can explain how a conclusion was reached.
-- **Improving robustness**: SUMO’s formal definitions reduce the likelihood of errors stemming from ambiguous or inconsistent inputs.
-- **Facilitating standardization**: As a widely accessible framework, SUMO enables cross-system interoperability, ensuring that AI applications communicate seamlessly.
-
-In summary, SUMO is a powerful tool for bridging the gap between human language and machine logic. Its rigorous definitions, logical foundations, and emphasis on interoperability make it invaluable for advancing natural language to logic translation engines, ultimately leading to more trustworthy and explainable AI systems.
-\section{Hybrid Neuro-Ontological Language Understanding (HyNOLU) Architecture}
-Describe the HyNOLU pipeline and how it integrates language processing with ontology and automated theorem proving. Highlight why preprocessing (e.g., sentence simplification) is critical for HyNOLU's success.
+Suggested Upper Merged Onotology (SUMO) is a type of ontology, which is a set of concepts and categories within a domain that shows their properties and relationships bewteen them. SUMO has had consistent contributions added to it for over 25 years and has extended into several hundred domains beyond merely an upper ontology that its name implies. Human interpretation of natural language requires implicit understandings of context, and background information about word meanings to form an accurate understanding of what is being conveyed. SUMO enables the mapping of words and sentences to domain-specific concepts that embed meaning to the input language. SUMO is similar to other ontologies in its use of hierarchy for organizing concepts, but distinct in its incorportation of formal higher-order logics for concept definitions. Every term in SUMO is coded in a formal logic called Knowledge Exchange Format (SUO-KIF), which allows machines to perform logical reasoning on concepts written in this language. The hierarchy begins with high-level concepts such as 'Entity', 'Physical', 'Abstract', 'Object', and 'Process'. These upper ontology concepts form the base for lower level concepts. For example 'Table' is a subclass of 'Furniture' which is a subclass of 'Artifact' and so on through Object, Physical, and finally Entity. SUMO's framework is semantically consistent through its unified vocabulary. Different terms that refer to the same concept like 'big' and 'large' are interpreted by the same logical constraints which helps to resolve synonyms and coreferences. With a given input text, English terms are mapped to concepts from the SUMO ontology by WordNet synset referencing.
+In summary, SUMO the largest public ontology that defines knowledge about the world across a multitude of domains. This knowledge representation which already contains thousands of definitions of fundamental concepts about the world, is necessary to translate English Language into expressive logic. SUMO alleviates the need to translate background and contextual knowledge into logic because thousands of terms that already have this logic built in are already defined. A formal proof can be pursued using an input text, assertions, and conjectures within the framework of SUMO. In simpler terms, this process determines whether the input text aligns with our established knowledge about the world.
 
 HyNOLU combines a robust knowledge represention, 
 
 \section{Language to Logic Translation}
-Explain the importance of logic translation in AI and knowledge representation. Introduce SUO-KIF and its role in formal ontology and automated reasoning.
 
-
-
+Logic translation refers to the translation of text into formal machine-readable structures that AI systems can use to reason and make decisions about the text. Different logics have different levels of expressiveness, meaning its ability to convey complex relationships and constraints. Propositional and first-order logics are less expressive than higher order, modal, and deontic logics. More expressive logics generally build upon less expressive logics with the addition of new symbols, quantifiers, and syntaxes. For example, ``Men fight in war'' can be translated easily to first order logic, but ``Men should fight in war'' would require a more expressive logic called Deontic logic, which is concerned with obligation, permission, and other related concepts. SUMO is written in the SUO-KIF language which is primarily a First-Order, but does allow for the employment of higher order and modal logics for use in the authoring and interchange of knowledge. It is a logically comprehensive language, allowing for the expression of arbitrary logical sentences.
 
 
 \section{Automated Theorem Provers}
